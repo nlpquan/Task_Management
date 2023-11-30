@@ -1,0 +1,14 @@
+.container {
+	text-align:center;
+}
+
+.col-center{
+    margin: 0 auto;
+    float: none;
+}
+
+.headerImage {
+	position:relative;
+	margin-bottom: -40px;
+	left:20px;
+}
