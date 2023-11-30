@@ -2,4 +2,4 @@
 Below you will find the steps by steps configuring Task Management Restful API
 ## Screencast Demo
 - [Instruction Video Part 1](https://www.loom.com/share/d49900cbfb4948e6b3dac1609fd9367b)
-- [Instruction Video Part 2 
+- [Instruction Video Part 2](https://www.loom.com/share/7e78b269e2d647c390e8e8416fd0abb0)
