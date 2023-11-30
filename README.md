@@ -20,7 +20,7 @@ Below you will find the steps by steps configuring Task Management Restful API
 - Make sure to go through all the Security and Testing API on Postman
 ## 6. Using Postman to Test API
 - Without authentication, it will show the error `unauthorized`
-- Using the username and the encrypted password for Authorization tab, type Basic Oauth, enter your username and password created on `localhost:8080`, keep the application running
+- Using the `username` and the encrypted `password` for Authorization tab, type Basic Oauth, enter your `username` and `password` created on `localhost:8080`, keep the application running
 - You can now be authorized for testing the API, as well as error handling that used JPA for storing tasks data
 ## Assumption: Deploy to Docker
 - Unfortunately, the last step was broken and the deployment was unsuccessful
