@@ -2,7 +2,7 @@ package com.da.model;
 
 import org.springframework.stereotype.Component;
 
-import jakarta.validation.constraints.Size;
+import javax.validation.constraints.Size;
 
 @Component
 public class UserCredential {

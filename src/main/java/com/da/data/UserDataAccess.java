@@ -29,7 +29,7 @@ public class UserDataAccess implements UserDataAccessInterface<UserEntity>{
 			// Get all the entity orders
 			Iterable<UserEntity> usersIterable = userRepository.findAll();
 			
-			// COnvert to a List and return the List
+			// Convert to a List and return the List
 			users = new ArrayList<UserEntity>();
 			usersIterable.forEach(users::add);
 		}

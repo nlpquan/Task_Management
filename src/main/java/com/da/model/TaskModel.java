@@ -1,6 +1,6 @@
 package com.da.model;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "tasks")

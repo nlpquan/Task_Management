@@ -26,73 +26,87 @@ import com.da.repository.TaskRepository;
 @RequestMapping("/api")
 public class TaskAPIService {
 
-	@Autowired
-	TaskRepository taskRepository;
+    @Autowired
+    TaskRepository taskRepository;
 
-	@GetMapping("/tasks")
-	public ResponseEntity<List<TaskModel>> getAllTasks(@RequestParam(required = false) String title) {
-	
-		List<TaskModel> tasks = new ArrayList<TaskModel>();
+    // Retrieve all tasks or tasks by title
+    @GetMapping("/tasks")
+    public ResponseEntity<List<TaskModel>> getAllTasks(@RequestParam(required = false) String title) {
 
-		if (title == null)
-			taskRepository.findAll().forEach(tasks::add);
-		else
-			taskRepository.findByTitle(title).forEach(tasks::add);
+        List<TaskModel> tasks = new ArrayList<TaskModel>();
 
-		if (tasks.isEmpty()) {
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-		}
-		return new ResponseEntity<>(tasks, HttpStatus.OK);
-	}
+        if (title == null)
+            // Get all tasks if no title parameter is provided
+            taskRepository.findAll().forEach(tasks::add);
+        else
+            // Get tasks by title if title parameter is provided
+            taskRepository.findByTitle(title).forEach(tasks::add);
 
-	@GetMapping("/tasks/{id}")
-	public ResponseEntity<TaskModel> getTaskById(@PathVariable("id") long id) {
-		TaskModel task = taskRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Not found Task with id = " + id));
+        if (tasks.isEmpty()) {
+            // Return no content status if no tasks are found
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(tasks, HttpStatus.OK);
+    }
 
-		return new ResponseEntity<>(task, HttpStatus.OK);		
-	}
+    // Retrieve a task by ID
+    @GetMapping("/tasks/{id}")
+    public ResponseEntity<TaskModel> getTaskById(@PathVariable("id") long id) {
+        // Find task by ID or throw exception if not found
+        TaskModel task = taskRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Not found Task with id = " + id));
 
-	@PostMapping("/tasks")
-	public ResponseEntity<TaskModel> createTask(@RequestBody TaskModel task) {
-		TaskModel _task = taskRepository
-				.save(new TaskModel(task.getTitle(), task.getDescription(), false));
-		return new ResponseEntity<>(_task, HttpStatus.CREATED);
-		
-	}
+        return new ResponseEntity<>(task, HttpStatus.OK);
+    }
 
-	@PutMapping("/tasks/{id}")
-	public ResponseEntity<TaskModel> updateTask(@PathVariable("id") long id, @RequestBody TaskModel task) {
-		TaskModel _task = taskRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Not found Task with id = " + id));		
-			_task.setTitle(task.getTitle());
-			_task.setDescription(task.getDescription());
-			_task.setCompleted(task.isCompleted());
-			return new ResponseEntity<>(taskRepository.save(_task), HttpStatus.OK);
-	}
+    // Create a new task
+    @PostMapping("/tasks")
+    public ResponseEntity<TaskModel> createTask(@RequestBody TaskModel task) {
+        // Save the new task and return it with a created status
+        TaskModel _task = taskRepository
+                .save(new TaskModel(task.getTitle(), task.getDescription(), false));
+        return new ResponseEntity<>(_task, HttpStatus.CREATED);
+    }
 
-	@DeleteMapping("/tasks/{id}")
-	public ResponseEntity<HttpStatus> deleteTask(@PathVariable("id") long id) {
-		taskRepository.deleteById(id);
-		return new ResponseEntity<>(HttpStatus.NO_CONTENT);	
-	}
+    // Update an existing task by ID
+    @PutMapping("/tasks/{id}")
+    public ResponseEntity<TaskModel> updateTask(@PathVariable("id") long id, @RequestBody TaskModel task) {
+        // Find the existing task by ID or throw exception if not found
+        TaskModel _task = taskRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Not found Task with id = " + id));
+        // Update task details and return it with an OK status
+        _task.setTitle(task.getTitle());
+        _task.setDescription(task.getDescription());
+        _task.setCompleted(task.isCompleted());
+        return new ResponseEntity<>(taskRepository.save(_task), HttpStatus.OK);
+    }
 
-	@DeleteMapping("/tasks")
-	public ResponseEntity<HttpStatus> deleteAllTasks() {
-		taskRepository.deleteAll();
-		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-	}
+    // Delete a task by ID
+    @DeleteMapping("/tasks/{id}")
+    public ResponseEntity<HttpStatus> deleteTask(@PathVariable("id") long id) {
+        // Delete the task by ID and return no content status
+        taskRepository.deleteById(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
-	@GetMapping("/tasks/completed")
-	public ResponseEntity<List<TaskModel>> findByCompleted() {
+    // Delete all tasks
+    @DeleteMapping("/tasks")
+    public ResponseEntity<HttpStatus> deleteAllTasks() {
+        // Delete all tasks and return no content status
+        taskRepository.deleteAll();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
-		List<TaskModel> tasks = taskRepository.findByCompleted(true);
+    // Retrieve all completed tasks
+    @GetMapping("/tasks/completed")
+    public ResponseEntity<List<TaskModel>> findByCompleted() {
 
-		if (tasks.isEmpty()) {
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-			}
-		return new ResponseEntity<>(tasks, HttpStatus.OK);
-	
-	}
+        List<TaskModel> tasks = taskRepository.findByCompleted(true);
 
+        if (tasks.isEmpty()) {
+            // Return no content status if no completed tasks are found
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(tasks, HttpStatus.OK);
+    }
 }

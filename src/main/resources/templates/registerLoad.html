@@ -20,19 +20,22 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <a th:href="@{../}" class="nav-item nav-link">Home</a>
+                <a href="/dashboard" class="nav-item nav-link">Dashboard</a>
             </div>
         </div>
     </div>
 	</nav>
 	
-	<div align="center" data-aos="flip-up" data-aos-duration="2000" class="container text-center">
-		
-		<br><br>
-		<h2 class="display-4">You are one step ahead of time!</h2>
-		<h4>Insert your credentials to Postman to use Tasks API :)</h4>
-		<img src="https://i.gifer.com/7efs.gif">
-		
-	</div>
+	<div data-aos="flip-up" data-aos-duration="2000" class="container text-center">
+    <br><br>
+    <h2 class="display-4">You are one step ahead of time!</h2>
+    <h4>Login below to access the API!</h4>
+    <div class="mx-auto" style="max-width: 300px;">
+        <img src="https://i.gifer.com/7efs.gif" class="img-fluid" alt="Animated GIF">
+    </div>
+    <a href="/login" class="btn btn-primary btn-block mt-4" role="button" aria-pressed="true">Login now!</a>
+</div>
+
 	
 	<br><br><br>
 	

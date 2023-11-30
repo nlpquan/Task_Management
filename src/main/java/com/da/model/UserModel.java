@@ -3,10 +3,10 @@ package com.da.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Component;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotEmpty;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 
 @Component
 public class UserModel {
