@@ -10,3 +10,6 @@ Below you will find the steps by steps configuring Task Management Restful API
 ## 3. "Optional" Download [Spring Tool 4 For Eclipse](https://spring.io/tools)
 - Open the extracted folder on Spring Tool
 - Feel free to choose your own IDE. Personally I use Spring Tool Suite 4 with Eclipse
+## 4. Install Postman To Test API
+## 5. Launch Application
+- Open local terminal, enter 'f'
