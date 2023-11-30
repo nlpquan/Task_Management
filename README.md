@@ -6,3 +6,5 @@ Below you will find the steps by steps configuring Task Management Restful API
 ## 1. Setup MySQL
 - Download [MySQL 8.0.35 Community Server](https://dev.mysql.com/downloads/mysql/)
 - Run MySQL server using MySQL Configurator on port 3306, password: 123456
+## 2. Download and Extract The Zip File to The Preferred Directory
+## 3. Download [Spring Tool 4 For Eclipse](https://spring.io/tools). Open the extracted folder on Spring Tool
