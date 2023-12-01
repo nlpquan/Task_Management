@@ -20,7 +20,7 @@ Below you will find the steps by steps configuring Task Management Restful API
 - Go to a desired browser and enter `localhost:8080`
 - Make sure to go through all the Security, Data Validation, and Testing API on Postman
 ## 6. Using Postman to Test API
-- Without authentication, it will show the error `unauthorized`
+- Without authentication, it will show the error `unauthorized` when making any requests (GET, POST, PUT DELETE)
 - Using the `username` and the encrypted `password` for Authorization tab, type Basic Oauth, enter your `username` and `password` created on `localhost:8080`, keep the application running
 - You can now be authorized for testing the API, as well as error handling that uses JPA for storing tasks data
 ## Assumption 1: Testing Data Validation in Register Form
