@@ -33,5 +33,7 @@ Below you will find the steps by steps configuring Task Management Restful API
 ## Assumption 2: Deploy to Docker Container using Docker Compose
 - Unfortunately, the last step was broken and the deployment was unsuccessful
 - Potential issue comes from the Spring Security, since the Spring Boot version is 2.7.1, hence the WebConfigurationAdapter is deprecated
-## Assumption 3: Comments on code
+## Assumption 3: Comments on Code
 - Some codes may not have comments or very little comments. I will try to add specific explantion in the future :)
+## Assumption 4: Plans for the Future
+- Will implement JavaScript and CSS for more styling in the future, if have times
