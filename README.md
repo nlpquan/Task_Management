@@ -25,4 +25,4 @@ Below you will find the steps by steps configuring Task Management Restful API
 - You can now be authorized for testing the API, as well as error handling that uses JPA for storing tasks data
 ## Assumption: Deploy to Docker
 - Unfortunately, the last step was broken and the deployment was unsuccessful
-- Potentially from the Spring Security, since the Spring Boot version is 2.7.1, hence the WebConfigurationAdapter is deprecated
+- Potential issue comes from the Spring Security, since the Spring Boot version is 2.7.1, hence the WebConfigurationAdapter is deprecated
