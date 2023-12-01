@@ -9,7 +9,7 @@ Below you will find the steps by steps configuring Task Management Restful API
 ## 3. "Optional" Download [Spring Tool 4 For Eclipse](https://spring.io/tools)
 - Open the extracted folder on Spring Tool
 - Feel free to choose your own IDE. Personally I use Spring Tool Suite 4 with Eclipse
-## 4. Install Postman To Test API
+## 4. Install [Postman](https://www.postman.com/) To Test API
 ## 5. Launch Application
 - Run MySQL server using MySQL Configurator on `port: 3306`, `password: 123456`
 - Check the `application.properties` file in task_management project to make sure the `username=root`, `password=123456`
