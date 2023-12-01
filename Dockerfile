@@ -1,6 +1,6 @@
 FROM maven:3.8.5-openjdk-17
 
-WORKDIR /Task_Management
+WORKDIR /task_management
 COPY . .
 RUN mvn clean install
 
