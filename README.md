@@ -23,6 +23,8 @@ Below you will find the steps by steps configuring Task Management Restful API
 - Without authentication, it will show the error `unauthorized`
 - Using the `username` and the encrypted `password` for Authorization tab, type Basic Oauth, enter your `username` and `password` created on `localhost:8080`, keep the application running
 - You can now be authorized for testing the API, as well as error handling that uses JPA for storing tasks data
-## Assumption: Deploy to Docker
+## Assumption 1: Testing Data Validation in Register Form
+- IMPORTANT: When you try to test data validation in the register form, there will be a pop-up window to tell you to log in. You can turn it off and choose not to. 
+## Assumption 2: Deploy to Docker
 - Unfortunately, the last step was broken and the deployment was unsuccessful
 - Potential issue comes from the Spring Security, since the Spring Boot version is 2.7.1, hence the WebConfigurationAdapter is deprecated
