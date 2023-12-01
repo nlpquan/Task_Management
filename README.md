@@ -18,7 +18,7 @@ Below you will find the steps by steps configuring Task Management Restful API
 - Go back to the task_management project, run the application. For Spring Tool 4, navigate to TaskManagementApplication.java -> right-click -> run as -> Spring Boot App
 - `tasks` and `users` tables will be automatically created when launched, `show tables;` in the MySQL server running on the local terminal to confirm these two availabilities
 - Go to a desired browser and enter `localhost:8080`
-- Make sure to go through all the Security and Testing API on Postman
+- Make sure to go through all the Security, Data Validation, and Testing API on Postman
 ## 6. Using Postman to Test API
 - Without authentication, it will show the error `unauthorized`
 - Using the `username` and the encrypted `password` for Authorization tab, type Basic Oauth, enter your `username` and `password` created on `localhost:8080`, keep the application running
