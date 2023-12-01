@@ -14,7 +14,7 @@ Below you will find the steps by steps configuring Task Management Restful API
 - Run MySQL server using MySQL Configurator on `port: 3306`, `password: 123456`
 - Check the `application.properties` file in task_management project to make sure the `username=root`, `password=123456`
 - Open local terminal, connect to mysql `mysql -u root -p`, prompt then enter password `123456`
-- Create a new task_management database `create database task_management;`, make sure to match with the` application.properties` file. Then `use task_management;`
+- Create a new task_management database `create database task_management;`, make sure to match with the `application.properties` file. Then `use task_management;`
 - Go back to the task_management project, run the application. For Spring Tool 4, navigate to TaskManagementApplication.java -> right-click -> run as -> Spring Boot App
 - Go to a desired browser and enter `localhost:8080`
 - Make sure to go through all the Security and Testing API on Postman
